@@ -1,0 +1,19 @@
+COREGUI = game:GetService("CoreGui")
+
+if not game:IsLoaded() then
+    local notLoaded = Instance.new("Message")
+    notLoaded.Parent = COREGUI
+    notLoaded.Text = 'Wait until 5.467 seconds (To remove an annoying search box!).'
+    game.Loaded:Wait()
+    notLoaded:Destroy()
+end
+
+for _, y in pairs(game:GetDescendants()) do
+    if y:IsA('ScreenGui') and y.Name == "KCoreUI" then
+        y:Destroy()
+    end
+end
+
+wait(5.467)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
